@@ -27,16 +27,13 @@ def get_five_product_facts():
   url = 'https://fakestoreapi.com/products?limit=5'
   response = urllib.request.urlopen(url)
   result = json.loads(response.read())
-  # print(result)
   
   producten = ""
   
-  # five_products = result[0]['title']
+
   for i in range(5):
     five_product = result[i]
-    # haal de titel uit het huidige product
     title = five_product["title"]
-    # voeg deze titel toe aan de variabele producten
     producten += title
   
   return producten
